@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "83S/W5ElCdg=",
+  "dgSpecHash": "uslnP8I0kHY=",
   "success": true,
-  "projectFilePath": "D:\\.netfolder\\ProjectManager\\ProjectManager.csproj",
+  "projectFilePath": "C:\\Users\\singa\\assprojectmanager\\backend\\ProjectManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\singa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.0-rc.2.25502.107\\microsoft.aspnetcore.authentication.jwtbearer.10.0.0-rc.2.25502.107.nupkg.sha512",
     "C:\\Users\\singa\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.0-rc.2.25502.107\\microsoft.entityframeworkcore.10.0.0-rc.2.25502.107.nupkg.sha512",

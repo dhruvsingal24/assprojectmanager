@@ -43,7 +43,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("ProjectManagerDb"));
 
 // Configure JWT Authentication
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "YourSuperSecretKeyThatIsAtLeast32CharactersLong!";
+var jwtKey = Environment.GetEnvironmentVariable("JWT_KEY") 
+    ?? builder.Configuration["Jwt:Key"];
+
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new InvalidOperationException("JWT Key must be configured via JWT_KEY environment variable");
+}
+
 var key = Encoding.ASCII.GetBytes(jwtKey);
 
 builder.Services.AddAuthentication(x =>
@@ -53,7 +60,7 @@ builder.Services.AddAuthentication(x =>
 })
 .AddJwtBearer(x =>
 {
-    x.RequireHttpsMetadata = false;
+    x.RequireHttpsMetadata = !builder.Environment.IsDevelopment();
     x.SaveToken = true;
     x.TokenValidationParameters = new TokenValidationParameters
     {
@@ -80,14 +87,18 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Configure Kestrel to listen on the PORT environment variable (required for Render)
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+    serverOptions.ListenAnyIP(int.Parse(port));
+});
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Configure the HTTP request pipeline - Enable Swagger in all environments
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors();
 app.UseAuthentication();

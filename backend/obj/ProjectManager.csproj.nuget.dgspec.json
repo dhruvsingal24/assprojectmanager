@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.netfolder\\ProjectManager\\ProjectManager.csproj": {}
+    "C:\\Users\\singa\\assprojectmanager\\backend\\ProjectManager.csproj": {}
   },
   "projects": {
-    "D:\\.netfolder\\ProjectManager\\ProjectManager.csproj": {
+    "C:\\Users\\singa\\assprojectmanager\\backend\\ProjectManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.netfolder\\ProjectManager\\ProjectManager.csproj",
+        "projectUniqueName": "C:\\Users\\singa\\assprojectmanager\\backend\\ProjectManager.csproj",
         "projectName": "ProjectManager",
-        "projectPath": "D:\\.netfolder\\ProjectManager\\ProjectManager.csproj",
+        "projectPath": "C:\\Users\\singa\\assprojectmanager\\backend\\ProjectManager.csproj",
         "packagesPath": "C:\\Users\\singa\\.nuget\\packages\\",
-        "outputPath": "D:\\.netfolder\\ProjectManager\\obj\\",
+        "outputPath": "C:\\Users\\singa\\assprojectmanager\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\singa\\AppData\\Roaming\\NuGet\\NuGet.Config"
